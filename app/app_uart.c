@@ -1,12 +1,13 @@
 /*
 *****************************************************************************************************************************************
 FileName:			app_uart.c
-Date:			2020.12.01
+Date:				2020.12.01
 
 Description:
 	1.
 *****************************************************************************************************************************************
 */
+
 
 
 #include <stdio.h>
@@ -40,7 +41,7 @@ int fputc(int ch, FILE *f)
 { 	
 	while(RESET == USART_GetFlagStatus(DEBUG_USART, USART_FLAG_TC))
 	{
-		;			//	等待数据发送完成。	0 == TC : (传送未完成)		1 == TC : (传送已完成)
+		;
 	}
 
 	USART_SendData(DEBUG_USART, (uint16_t) ch);
@@ -52,18 +53,17 @@ int fputc(int ch, FILE *f)
 
 #endif		//	End of "DEBUG_EN"
 
-
-
 INT8 DebugUartInit()
 {
-	
-	
+
 	return 0;
 }
 
+INT8 DEBUGUartGpioInit()
+{
 
-
-
+	return 0;
+}
 
 
 
